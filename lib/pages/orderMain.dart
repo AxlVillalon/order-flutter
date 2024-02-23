@@ -1,12 +1,13 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
-import 'orderMain.dart';
 
 class orderMain extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Screen 2')),
-      body: Center(
+      appBar: AppBar(title: const Text('Screen 2')),
+      body: const Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

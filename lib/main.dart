@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'pages/viewOrder.dart';
 void main() => runApp(
-      MaterialApp(
+      const MaterialApp(
         debugShowCheckedModeBanner: false,
         home: HomePage(),
       ),
     );
 
 class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _HomePageState createState() => _HomePageState();
 }
 
@@ -40,8 +43,8 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              SizedBox(height: 80),
-              Padding(
+              const SizedBox(height: 80),
+              const Padding(
                 padding: EdgeInsets.all(20),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -73,7 +76,7 @@ class _HomePageState extends State<HomePage> {
                 child: Container(
                   decoration: BoxDecoration(
                     color: Colors.white,
-                    borderRadius: BorderRadius.only(
+                    borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(50),
                       topRight: Radius.circular(50),
                     ),
@@ -82,32 +85,32 @@ class _HomePageState extends State<HomePage> {
                         color: Colors.black.withOpacity(0.5),
                         spreadRadius: 5,
                         blurRadius: 10,
-                        offset: Offset(0, 3),
+                        offset: const Offset(0, 3),
                       ),
                     ],
                   ),
                   child: Padding(
-                    padding: EdgeInsets.all(30),
+                    padding: const EdgeInsets.all(30),
                     child: Column(
                       children: <Widget>[
-                        SizedBox(height: 60),
+                        const SizedBox(height: 60),
                         TextFormField(
-                          style: TextStyle(fontFamily: 'MaanJoy'),
+                          style: const TextStyle(fontFamily: 'MaanJoy'),
                           decoration: InputDecoration(
                             hintText: "Username",
-                            prefixIcon: Icon(Icons.person, color: Colors.grey),
+                            prefixIcon: const Icon(Icons.person, color: Colors.grey),
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10),
                             ),
                           ),
                         ),
-                        SizedBox(height: 20),
+                        const SizedBox(height: 20),
                         TextFormField(
                           obscureText: _isObscured,
-                          style: TextStyle(fontFamily: 'MaanJoy'),
+                          style: const TextStyle(fontFamily: 'MaanJoy'),
                           decoration: InputDecoration(
                             hintText: "Password",
-                            prefixIcon: Icon(Icons.lock, color: Colors.grey),
+                            prefixIcon: const Icon(Icons.lock, color: Colors.grey),
                             suffixIcon: IconButton(
                               icon: Icon(
                                 _isObscured
@@ -122,27 +125,27 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
                         ),
-                        SizedBox(height: 20),
-                        Container(
+                        const SizedBox(height: 20),
+                        SizedBox(
                           width: double.infinity,
                           height: 50,
                           child: ElevatedButton(
                             onPressed: () {
                               Navigator.push(context, MaterialPageRoute(builder: (context) => viewOrder()));
                             },
-                            child: GlowingText(
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.black,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                            ),
+                            child: const GlowingText(
                               text: "Sign in",
                               glowColor: Colors.black,
                               style: TextStyle(
                                 fontSize: 18,
                                 color: Colors.white,
                                 fontFamily: 'MaanJoy',
-                              ),
-                            ),
-                            style: ElevatedButton.styleFrom(
-                              primary: Colors.black,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10),
                               ),
                             ),
                           ),
@@ -174,22 +177,20 @@ class GlowingText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text(
-        text,
-        style: style.copyWith(shadows: [
-          Shadow(
-            blurRadius: 10.0,
-            color: glowColor,
-            offset: Offset(0, 0),
-          ),
-          Shadow(
-            blurRadius: 10.0,
-            color: glowColor,
-            offset: Offset(0, 0),
-          ),
-        ]),
-      ),
+    return Text(
+      text,
+      style: style.copyWith(shadows: [
+        Shadow(
+          blurRadius: 10.0,
+          color: glowColor,
+          offset: const Offset(0, 0),
+        ),
+        Shadow(
+          blurRadius: 10.0,
+          color: glowColor,
+          offset: const Offset(0, 0),
+        ),
+      ]),
     );
   }
 }
