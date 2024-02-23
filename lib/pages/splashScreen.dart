@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'main.dart'; // Import your main application screen
+import 'package:ordering/pages/login.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
