@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'pages/viewOrder.dart';
+import 'splashScreen.dart';
 void main() => runApp(
       const MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: HomePage(),
+        home: SplashScreen(),
       ),
     );
 
