@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'pages/viewOrder.dart';
 import 'splashScreen.dart';
+import 'pages/HomePage.dart';
+
 void main() => runApp(
       const MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -132,7 +134,7 @@ class _HomePageState extends State<HomePage> {
                           height: 50,
                           child: ElevatedButton(
                             onPressed: () {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => viewOrder()));
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage2()));
                             },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.black,
