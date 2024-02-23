@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'pages/viewOrder.dart';
 void main() => runApp(
       MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -127,7 +127,9 @@ class _HomePageState extends State<HomePage> {
                           width: double.infinity,
                           height: 50,
                           child: ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => viewOrder()));
+                            },
                             child: GlowingText(
                               text: "Sign in",
                               glowColor: Colors.black,
