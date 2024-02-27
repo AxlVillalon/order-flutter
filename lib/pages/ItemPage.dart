@@ -1,13 +1,20 @@
+import 'package:flutter/material.dart';
 import 'package:clippy_flutter/arc.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:ordering/Widgets/AppBarWidget.dart';
-
+import '../Widgets/AppBarWidget.dart';
 import '../Widgets/DrawerWidget.dart';
 import '../Widgets/ItemBottomNavBar.dart';
 
-class ItemPage extends StatelessWidget {
+class ItemPage extends StatefulWidget {
+  @override
+  _ItemPageState createState() => _ItemPageState();
+}
+
+class _ItemPageState extends State<ItemPage> {
+  String? _selectedItem;
+  final List<String> _dropdownItems = ['Printer 1', 'Printer 2', 'Printer 3'];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,8 +28,6 @@ class ItemPage extends StatelessWidget {
               child: Image.asset(
                 "images/burger.png",
                 height: 150,
-                // width: double.infinity,
-                // width: 100,
               ),
             ),
             Arc(
@@ -98,9 +103,10 @@ class ItemPage extends StatelessWidget {
                                   Text(
                                     "1",
                                     style: TextStyle(
-                                        fontSize: 16,
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold),
+                                      fontSize: 16,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                    ),
                                   ),
                                   Icon(
                                     CupertinoIcons.plus,
@@ -117,43 +123,52 @@ class ItemPage extends StatelessWidget {
                         padding: EdgeInsets.symmetric(
                           vertical: 10,
                         ),
-                        child: Text(
-                          "Taste Our Hot Burger at low price, this is famous burger and you will love it. it will cost you at low price, we hope you will enjoy and order many times.",
+                        child: TextField(
+                          decoration: InputDecoration(
+                            hintText: 'Enter your text here...',
+                            border: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.grey),
+                            ),
+                          ),
                           style: TextStyle(fontSize: 16),
                           textAlign: TextAlign.justify,
+                          maxLines: null, // Allows multiple lines of input
                         ),
                       ),
-                      Padding(
-                        padding: EdgeInsets.symmetric(
-                          vertical: 10,
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      SizedBox(height: 10), // Add some space
+                      Align( // Align the dropdown to the left
+                        alignment: Alignment.centerLeft,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start, // Align items to the left
                           children: [
                             Text(
-                              "Delievery Time",
+                              'Select a Printer:', // Text indicating the purpose of the dropdown
                               style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.bold,
-                                  fontStyle: FontStyle.italic),
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
-                            Row(
-                              children: [
-                                Padding(
-                                  padding: EdgeInsets.symmetric(horizontal: 5),
-                                  child: Icon(
-                                    CupertinoIcons.clock,
-                                    color: Colors.red,
-                                  ),
+                            SizedBox(height: 5), // Add some space
+                            DropdownButtonFormField<String>(
+                              value: _selectedItem,
+                              decoration: InputDecoration(
+                                border: OutlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.grey), // Set border color to grey
                                 ),
-                                Text(
-                                  "30 Minutes",
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                  ),
-                                ),
-                              ],
-                            )
+                                contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                              ),
+                              items: _dropdownItems.map((String value) {
+                                return DropdownMenuItem<String>(
+                                  value: value == 'Select a Printer' ? null : value, // Set value to null for disabled option
+                                  child: Text(value),
+                                );
+                              }).toList(),
+                              onChanged: (String? newValue) {
+                                setState(() {
+                                  _selectedItem = newValue;
+                                });
+                              },
+                            ),
                           ],
                         ),
                       ),

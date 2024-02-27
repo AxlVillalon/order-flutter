@@ -4,7 +4,6 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:ordering/Widgets/DrawerWidget.dart';
 
 import '../Widgets/AppBarWidget.dart';
-import '../Widgets/CartBottomNavBar.dart';
 import '../Widgets/CategoriesWidget.dart';
 
 class CategoryPage extends StatelessWidget {
