@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:ordering/pages/login.dart';
+import 'package:ordering/pages/HomePage.dart'; // Corrected import statement for HomePage
 
 class SplashScreen extends StatelessWidget {
-  const SplashScreen({super.key});
+  const SplashScreen({Key? key}) : super(key: key); // Corrected the constructor
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +11,7 @@ class SplashScreen extends StatelessWidget {
       // Navigate to the home page once the delay is over
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => HomePage()),
+        MaterialPageRoute(builder: (context) => HomePage2()),
       );
     });
 

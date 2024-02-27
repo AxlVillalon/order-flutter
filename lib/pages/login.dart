@@ -1,23 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:ordering/pages/HomePage.dart';
-import 'package:ordering/pages/splashScreen.dart';
 
-void main() => runApp(
-      const MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: SplashScreen(),
-      ),
-    );
-
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class LoginPage extends StatefulWidget {
+  const LoginPage({Key? key}) : super(key: key);
 
   @override
-  // ignore: library_private_types_in_public_api
-  _HomePageState createState() => _HomePageState();
+  _LoginPageState createState() => _LoginPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _LoginPageState extends State<LoginPage> {
   bool _isObscured = true;
 
   void _togglePasswordVisibility() {
@@ -135,6 +126,7 @@ class _HomePageState extends State<HomePage> {
                           height: 50,
                           child: ElevatedButton(
                             onPressed: () {
+                              // Ensure HomePage2 is defined somewhere in your code
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
