@@ -1,6 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class CartBottomNavBar extends StatelessWidget {
+class ItemBottomNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomAppBar(
@@ -29,22 +30,26 @@ class CartBottomNavBar extends StatelessWidget {
                 ),
               ],
             ),
-            ElevatedButton(
+            ElevatedButton.icon(
               onPressed: () {},
               style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all(Colors.red),
                 padding: MaterialStateProperty.all(
                   EdgeInsets.symmetric(
-                    vertical: 15,
-                    horizontal: 20,
+                    vertical: 13,
+                    horizontal: 15,
                   ),
                 ),
                 shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                     RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20))),
               ),
-              child: Text(
-                "Order Now",
+              icon: Icon(
+                CupertinoIcons.cart,
+                color: Colors.white,
+              ),
+              label: Text(
+                "Add To Cart",
                 style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,

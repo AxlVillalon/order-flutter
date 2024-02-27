@@ -13,6 +13,8 @@ class CategoriesWidget extends StatelessWidget {
         child: Row(children: [
           //Single item
           // for (int i = 0; i < 10; i++)
+
+          //Category 1
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 5),
             child: Container(
@@ -31,12 +33,21 @@ class CategoriesWidget extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  Text(
-                    'Drink', // Your text here
-                    style: TextStyle(
-                      fontSize: 12,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w700,
+                  InkWell(
+                    onTap: () {
+                      Navigator.pushNamed(context, "categoryPage");
+                    },
+                    child: Container(
+                      alignment: Alignment.center,
+                      padding: EdgeInsets.all(1),
+                      child: Text(
+                        'Drink',
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Colors.black,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
                     ),
                   ),
                 ],
@@ -44,6 +55,7 @@ class CategoriesWidget extends StatelessWidget {
             ),
           ),
 
+          //Category 2
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 5),
             child: Container(
@@ -62,12 +74,21 @@ class CategoriesWidget extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  Text(
-                    'Pizza', // Your text here
-                    style: TextStyle(
-                      fontSize: 12,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w700,
+                  InkWell(
+                    onTap: () {
+                      Navigator.pushNamed(context, "categoryPage");
+                    },
+                    child: Container(
+                      alignment: Alignment.center,
+                      padding: EdgeInsets.all(1),
+                      child: Text(
+                        'Pizza', // Your text here
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Colors.black,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
                     ),
                   ),
                 ],
@@ -75,6 +96,7 @@ class CategoriesWidget extends StatelessWidget {
             ),
           ),
 
+          //Category 3
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 5),
             child: Container(
@@ -93,12 +115,21 @@ class CategoriesWidget extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  Text(
-                    'Dessert', // Your text here
-                    style: TextStyle(
-                      fontSize: 12,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w700,
+                  InkWell(
+                    onTap: () {
+                      Navigator.pushNamed(context, "categoryPage");
+                    },
+                    child: Container(
+                      alignment: Alignment.center,
+                      padding: EdgeInsets.all(1),
+                      child: Text(
+                        'Dessert', // Your text here
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Colors.black,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
                     ),
                   ),
                 ],
@@ -106,6 +137,7 @@ class CategoriesWidget extends StatelessWidget {
             ),
           ),
 
+          //Category 4
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 5),
             child: Container(
@@ -124,12 +156,21 @@ class CategoriesWidget extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  Text(
-                    'Pasta', // Your text here
-                    style: TextStyle(
-                      fontSize: 12,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w700,
+                  InkWell(
+                    onTap: () {
+                      Navigator.pushNamed(context, "categoryPage");
+                    },
+                    child: Container(
+                      alignment: Alignment.center,
+                      padding: EdgeInsets.all(1),
+                      child: Text(
+                        'Pasta', // Your text here
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Colors.black,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
                     ),
                   ),
                 ],
@@ -137,6 +178,7 @@ class CategoriesWidget extends StatelessWidget {
             ),
           ),
 
+          //Category 5
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 5),
             child: Container(
@@ -155,12 +197,21 @@ class CategoriesWidget extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  Text(
-                    'Pastry', // Your text here
-                    style: TextStyle(
-                      fontSize: 12,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w700,
+                  InkWell(
+                    onTap: () {
+                      Navigator.pushNamed(context, "categoryPage");
+                    },
+                    child: Container(
+                      alignment: Alignment.center,
+                      padding: EdgeInsets.all(1),
+                      child: Text(
+                        'Pastry', // Your text here
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Colors.black,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
                     ),
                   ),
                 ],
@@ -168,6 +219,7 @@ class CategoriesWidget extends StatelessWidget {
             ),
           ),
 
+          //Category 6
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 5),
             child: Container(
@@ -186,12 +238,21 @@ class CategoriesWidget extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  Text(
-                    'Burger', // Your text here
-                    style: TextStyle(
-                      fontSize: 12,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w700,
+                  InkWell(
+                    onTap: () {
+                      Navigator.pushNamed(context, "categoryPage");
+                    },
+                    child: Container(
+                      alignment: Alignment.center,
+                      padding: EdgeInsets.all(1),
+                      child: Text(
+                        'Burger', // Your text here
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Colors.black,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
                     ),
                   ),
                 ],
@@ -199,6 +260,7 @@ class CategoriesWidget extends StatelessWidget {
             ),
           ),
 
+          //Category 7
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 5),
             child: Container(
@@ -217,12 +279,21 @@ class CategoriesWidget extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  Text(
-                    'Coffee', // Your text here
-                    style: TextStyle(
-                      fontSize: 12,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w700,
+                  InkWell(
+                    onTap: () {
+                      Navigator.pushNamed(context, "categoryPage");
+                    },
+                    child: Container(
+                      alignment: Alignment.center,
+                      padding: EdgeInsets.all(1),
+                      child: Text(
+                        'Coffee', // Your text here
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Colors.black,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
                     ),
                   ),
                 ],
@@ -230,6 +301,7 @@ class CategoriesWidget extends StatelessWidget {
             ),
           ),
 
+          //Category 8
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 5),
             child: Container(
@@ -248,18 +320,27 @@ class CategoriesWidget extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  Text(
-                    'Chicken Joy', // Your text here
-                    style: TextStyle(
-                      fontSize: 12,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w700,
+                  InkWell(
+                    onTap: () {
+                      Navigator.pushNamed(context, "categoryPage");
+                    },
+                    child: Container(
+                      alignment: Alignment.center,
+                      padding: EdgeInsets.all(1),
+                      child: Text(
+                        'Chicken Joy', // Your text here
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Colors.black,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
                     ),
                   ),
                 ],
               ),
             ),
-          ),
+          ), //End Of Category
         ]),
       ),
     );
