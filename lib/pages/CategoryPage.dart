@@ -106,7 +106,7 @@ class CategoryPage extends StatelessWidget {
                                       EdgeInsets.symmetric(horizontal: 4),
                                   itemBuilder: (context, _) => Icon(
                                     Icons.star,
-                                    color: Colors.red,
+                                    color: Colors.black,
                                   ),
                                   onRatingUpdate: (index) {},
                                 ),
@@ -114,7 +114,7 @@ class CategoryPage extends StatelessWidget {
                                   "\$10",
                                   style: TextStyle(
                                     fontSize: 20,
-                                    color: Colors.red,
+                                    color: Colors.black,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
@@ -128,12 +128,12 @@ class CategoryPage extends StatelessWidget {
                               children: [
                                 Icon(
                                   Icons.favorite_border,
-                                  color: Colors.red,
+                                  color: Colors.black,
                                   size: 26,
                                 ),
                                 Icon(
                                   CupertinoIcons.cart,
-                                  color: Colors.red,
+                                  color: Colors.black,
                                   size: 26,
                                 ),
                               ],
@@ -167,7 +167,7 @@ class CategoryPage extends StatelessWidget {
           child: Icon(
             CupertinoIcons.cart,
             size: 28,
-            color: Colors.red,
+            color: Colors.black,
           ),
           shape: CircleBorder(),
           backgroundColor: Colors.white,

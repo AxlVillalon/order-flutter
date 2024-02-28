@@ -86,7 +86,7 @@ class CartPage extends StatelessWidget {
                                   style: TextStyle(
                                     fontSize: 20,
                                     fontWeight: FontWeight.bold,
-                                    color: Colors.red,
+                                    color: Colors.black,
                                     // fontWeight: FontWeight.bold,
                                   ),
                                 )
@@ -98,7 +98,7 @@ class CartPage extends StatelessWidget {
                             child: Container(
                               padding: EdgeInsets.all(5),
                               decoration: BoxDecoration(
-                                color: Colors.red,
+                                color: Colors.black,
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               child: Column(
@@ -183,7 +183,7 @@ class CartPage extends StatelessWidget {
                                   style: TextStyle(
                                     fontSize: 20,
                                     fontWeight: FontWeight.bold,
-                                    color: Colors.red,
+                                    color: Colors.black,
                                     // fontWeight: FontWeight.bold,
                                   ),
                                 )
@@ -195,7 +195,7 @@ class CartPage extends StatelessWidget {
                             child: Container(
                               padding: EdgeInsets.all(5),
                               decoration: BoxDecoration(
-                                color: Colors.red,
+                                color: Colors.black,
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               child: Column(
@@ -327,7 +327,7 @@ class CartPage extends StatelessWidget {
                                   style: TextStyle(
                                     fontSize: 20,
                                     fontWeight: FontWeight.bold,
-                                    color: Colors.red,
+                                    color: Colors.black,
                                   ),
                                 ),
                               ],

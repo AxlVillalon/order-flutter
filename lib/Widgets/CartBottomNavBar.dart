@@ -25,14 +25,14 @@ class CartBottomNavBar extends StatelessWidget {
                   style: TextStyle(
                       fontSize: 19,
                       fontWeight: FontWeight.bold,
-                      color: Colors.red),
+                      color: Colors.black),
                 ),
               ],
             ),
             ElevatedButton(
               onPressed: () {},
               style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(Colors.red),
+                backgroundColor: MaterialStateProperty.all(Colors.black),
                 padding: MaterialStateProperty.all(
                   EdgeInsets.symmetric(
                     vertical: 15,

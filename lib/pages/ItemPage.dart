@@ -55,7 +55,7 @@ class _ItemPageState extends State<ItemPage> {
                               itemPadding: EdgeInsets.symmetric(horizontal: 4),
                               itemBuilder: (context, _) => Icon(
                                 Icons.star,
-                                color: Colors.red,
+                                color: Colors.yellow,
                               ),
                               onRatingUpdate: (index) {},
                             ),
@@ -88,7 +88,7 @@ class _ItemPageState extends State<ItemPage> {
                               width: 90,
                               padding: EdgeInsets.all(5),
                               decoration: BoxDecoration(
-                                color: Colors.red,
+                                color: Colors.black,
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               child: Row(
