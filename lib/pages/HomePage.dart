@@ -44,7 +44,7 @@ class HomePage2 extends StatelessWidget {
                   children: [
                     Icon(
                       CupertinoIcons.search,
-                      color: Colors.red,
+                      color: Colors.black,
                     ),
                     Container(
                       height: 50,
@@ -131,7 +131,7 @@ class HomePage2 extends StatelessWidget {
           child: Icon(
             CupertinoIcons.cart,
             size: 28,
-            color: Colors.red,
+            color: Colors.black,
           ),
           shape: CircleBorder(),
           backgroundColor: Colors.white,

@@ -136,10 +136,12 @@ class _ItemPageState extends State<ItemPage> {
                         ),
                       ),
                       SizedBox(height: 10), // Add some space
-                      Align( // Align the dropdown to the left
+                      Align(
+                        // Align the dropdown to the left
                         alignment: Alignment.centerLeft,
                         child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start, // Align items to the left
+                          crossAxisAlignment: CrossAxisAlignment
+                              .start, // Align items to the left
                           children: [
                             Text(
                               'Select a Printer:', // Text indicating the purpose of the dropdown
@@ -153,13 +155,18 @@ class _ItemPageState extends State<ItemPage> {
                               value: _selectedItem,
                               decoration: InputDecoration(
                                 border: OutlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.grey), // Set border color to grey
+                                  borderSide: BorderSide(
+                                      color: Colors
+                                          .grey), // Set border color to grey
                                 ),
-                                contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                                contentPadding: EdgeInsets.symmetric(
+                                    vertical: 10, horizontal: 20),
                               ),
                               items: _dropdownItems.map((String value) {
                                 return DropdownMenuItem<String>(
-                                  value: value == 'Select a Printer' ? null : value, // Set value to null for disabled option
+                                  value: value == 'Select a Printer'
+                                      ? null
+                                      : value, // Set value to null for disabled option
                                   child: Text(value),
                                 );
                               }).toList(),
