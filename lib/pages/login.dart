@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ordering/pages/HomePage.dart';
 
+
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
@@ -19,10 +20,13 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
+    final screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          height: MediaQuery.of(context).size.height,
+          height: screenHeight,
           decoration: BoxDecoration(
             gradient: LinearGradient(
               begin: Alignment.topCenter,
@@ -36,9 +40,9 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              const SizedBox(height: 80),
-              const Padding(
-                padding: EdgeInsets.all(20),
+              SizedBox(height: screenHeight * 0.1),
+              Padding(
+                padding: EdgeInsets.all(screenWidth * 0.05),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
@@ -47,18 +51,18 @@ class _LoginPageState extends State<LoginPage> {
                       glowColor: Colors.black,
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 36,
+                        fontSize: screenHeight * 0.05,
                         fontWeight: FontWeight.bold,
                         fontFamily: 'MaanJoy',
                       ),
                     ),
-                    SizedBox(height: 10),
+                    SizedBox(height: screenHeight * 0.01),
                     GlowingText(
                       text: "Sign in to continue",
                       glowColor: Colors.black,
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 18,
+                        fontSize: screenHeight * 0.025,
                         fontFamily: 'MaanJoy',
                       ),
                     ),
@@ -69,80 +73,77 @@ class _LoginPageState extends State<LoginPage> {
                 child: Container(
                   decoration: BoxDecoration(
                     color: Colors.white,
-                    borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(50),
-                      topRight: Radius.circular(50),
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(screenWidth * 0.1),
+                      topRight: Radius.circular(screenWidth * 0.1),
                     ),
                     boxShadow: [
                       BoxShadow(
                         color: Colors.black.withOpacity(0.5),
-                        spreadRadius: 5,
-                        blurRadius: 10,
-                        offset: const Offset(0, 3),
+                        spreadRadius: screenWidth * 0.02,
+                        blurRadius: screenWidth * 0.04,
+                        offset: Offset(0, screenWidth * 0.03),
                       ),
                     ],
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.all(30),
+                    padding: EdgeInsets.all(screenWidth * 0.06),
                     child: Column(
                       children: <Widget>[
-                        const SizedBox(height: 60),
+                        SizedBox(height: screenHeight * 0.1),
                         TextFormField(
-                          style: const TextStyle(fontFamily: 'MaanJoy'),
+                          style: TextStyle(fontFamily: 'MaanJoy'),
                           decoration: InputDecoration(
                             hintText: "Username",
-                            prefixIcon:
-                                const Icon(Icons.person, color: Colors.grey),
+                            prefixIcon: Icon(Icons.person, color: Colors.grey),
                             border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10),
+                              borderRadius: BorderRadius.circular(screenWidth * 0.05),
                             ),
                           ),
                         ),
-                        const SizedBox(height: 20),
+                        SizedBox(height: screenHeight * 0.02),
                         TextFormField(
                           obscureText: _isObscured,
-                          style: const TextStyle(fontFamily: 'MaanJoy'),
+                          style: TextStyle(fontFamily: 'MaanJoy'),
                           decoration: InputDecoration(
                             hintText: "Password",
-                            prefixIcon:
-                                const Icon(Icons.lock, color: Colors.grey),
+                            prefixIcon: Icon(Icons.lock, color: Colors.grey),
                             suffixIcon: IconButton(
                               icon: Icon(
-                                _isObscured
-                                    ? Icons.visibility
-                                    : Icons.visibility_off,
+                                _isObscured ? Icons.visibility : Icons.visibility_off,
                                 color: Colors.grey,
                               ),
                               onPressed: _togglePasswordVisibility,
                             ),
                             border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10),
+                              borderRadius: BorderRadius.circular(screenWidth * 0.05),
                             ),
                           ),
                         ),
-                        const SizedBox(height: 20),
+                        SizedBox(height: screenHeight * 0.02),
                         SizedBox(
                           width: double.infinity,
-                          height: 50,
+                          height: screenHeight * 0.06,
                           child: ElevatedButton(
                             onPressed: () {
-                              // Ensure HomePage2 is defined somewhere in your code
                               Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => HomePage2()));
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => HomePage2(),
+                                ),
+                              );
                             },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.black,
                               shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10),
+                                borderRadius: BorderRadius.circular(screenWidth * 0.05),
                               ),
                             ),
-                            child: const GlowingText(
+                            child: GlowingText(
                               text: "Sign in",
                               glowColor: Colors.black,
                               style: TextStyle(
-                                fontSize: 18,
+                                fontSize: screenHeight * 0.025,
                                 color: Colors.white,
                                 fontFamily: 'MaanJoy',
                               ),

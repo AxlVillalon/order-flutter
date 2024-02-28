@@ -17,6 +17,9 @@ class _ItemPageState extends State<ItemPage> {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       body: Padding(
         padding: EdgeInsets.only(top: 5),
@@ -24,25 +27,25 @@ class _ItemPageState extends State<ItemPage> {
           children: [
             AppBarWidget(),
             Padding(
-              padding: EdgeInsets.all(16),
+              padding: EdgeInsets.all(screenWidth * 0.05),
               child: Image.asset(
                 "images/burger.png",
-                height: 150,
+                height: screenHeight * 0.2,
               ),
             ),
             Arc(
               edge: Edge.TOP,
               arcType: ArcType.CONVEY,
-              height: 30,
+              height: screenWidth * 0.075,
               child: Container(
                 width: double.infinity,
                 color: Colors.white,
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
                   child: Column(
                     children: [
                       Padding(
-                        padding: EdgeInsets.only(top: 60, bottom: 10),
+                        padding: EdgeInsets.only(top: screenHeight * 0.075, bottom: screenHeight * 0.015),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -51,8 +54,8 @@ class _ItemPageState extends State<ItemPage> {
                               minRating: 1,
                               direction: Axis.horizontal,
                               itemCount: 5,
-                              itemSize: 18,
-                              itemPadding: EdgeInsets.symmetric(horizontal: 4),
+                              itemSize: screenWidth * 0.036,
+                              itemPadding: EdgeInsets.symmetric(horizontal: screenWidth * 0.01),
                               itemBuilder: (context, _) => Icon(
                                 Icons.star,
                                 color: Colors.yellow,
@@ -62,7 +65,7 @@ class _ItemPageState extends State<ItemPage> {
                             Text(
                               "\$10",
                               style: TextStyle(
-                                fontSize: 20,
+                                fontSize: screenWidth * 0.04,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
@@ -71,8 +74,8 @@ class _ItemPageState extends State<ItemPage> {
                       ),
                       Padding(
                         padding: EdgeInsets.only(
-                          top: 10,
-                          bottom: 20,
+                          top: screenHeight * 0.015,
+                          bottom: screenHeight * 0.03,
                         ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -80,30 +83,30 @@ class _ItemPageState extends State<ItemPage> {
                             Text(
                               "Hot Burger",
                               style: TextStyle(
-                                fontSize: 28,
+                                fontSize: screenWidth * 0.056,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
                             Container(
-                              width: 90,
-                              padding: EdgeInsets.all(5),
+                              width: screenWidth * 0.2,
+                              padding: EdgeInsets.all(screenWidth * 0.0125),
                               decoration: BoxDecoration(
                                 color: Colors.black,
-                                borderRadius: BorderRadius.circular(10),
+                                borderRadius: BorderRadius.circular(screenWidth * 0.025),
                               ),
                               child: Row(
                                 mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                MainAxisAlignment.spaceBetween,
                                 children: [
                                   Icon(
                                     CupertinoIcons.minus,
                                     color: Colors.white,
-                                    size: 20,
+                                    size: screenWidth * 0.04,
                                   ),
                                   Text(
                                     "1",
                                     style: TextStyle(
-                                      fontSize: 16,
+                                      fontSize: screenWidth * 0.032,
                                       color: Colors.white,
                                       fontWeight: FontWeight.bold,
                                     ),
@@ -111,7 +114,7 @@ class _ItemPageState extends State<ItemPage> {
                                   Icon(
                                     CupertinoIcons.plus,
                                     color: Colors.white,
-                                    size: 20,
+                                    size: screenWidth * 0.04,
                                   ),
                                 ],
                               ),
@@ -121,7 +124,7 @@ class _ItemPageState extends State<ItemPage> {
                       ),
                       Padding(
                         padding: EdgeInsets.symmetric(
-                          vertical: 10,
+                          vertical: screenHeight * 0.01,
                         ),
                         child: TextField(
                           decoration: InputDecoration(
@@ -130,12 +133,12 @@ class _ItemPageState extends State<ItemPage> {
                               borderSide: BorderSide(color: Colors.grey),
                             ),
                           ),
-                          style: TextStyle(fontSize: 16),
+                          style: TextStyle(fontSize: screenWidth * 0.04),
                           textAlign: TextAlign.justify,
                           maxLines: null, // Allows multiple lines of input
                         ),
                       ),
-                      SizedBox(height: 10), // Add some space
+                      SizedBox(height: screenHeight * 0.01), // Add some space
                       Align(
                         // Align the dropdown to the left
                         alignment: Alignment.centerLeft,
@@ -146,11 +149,11 @@ class _ItemPageState extends State<ItemPage> {
                             Text(
                               'Select a Printer:', // Text indicating the purpose of the dropdown
                               style: TextStyle(
-                                fontSize: 16,
+                                fontSize: screenWidth * 0.04,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            SizedBox(height: 5), // Add some space
+                            SizedBox(height: screenHeight * 0.005), // Add some space
                             DropdownButtonFormField<String>(
                               value: _selectedItem,
                               decoration: InputDecoration(
@@ -160,7 +163,7 @@ class _ItemPageState extends State<ItemPage> {
                                           .grey), // Set border color to grey
                                 ),
                                 contentPadding: EdgeInsets.symmetric(
-                                    vertical: 10, horizontal: 20),
+                                    vertical: screenHeight * 0.025, horizontal: screenWidth * 0.05),
                               ),
                               items: _dropdownItems.map((String value) {
                                 return DropdownMenuItem<String>(

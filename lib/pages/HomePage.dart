@@ -61,7 +61,7 @@ class HomePage2 extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Icon(Icons.filter_list),
+                    // Icon(Icons.filter_list),
                   ],
                 ),
               ),
